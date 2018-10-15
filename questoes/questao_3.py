@@ -45,7 +45,21 @@
 # substituindo apenas o comando print(questão...) existente.
 ##
 def main():
-    print("questao 3")
+    Alfabeto = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    Num = []
+    String = []
+    Cifra = input().split()
+    if Cifra[0][0:3] == 'ROT' and Cifra[0][3:].isdigit():
+    	ROTA = int(Cifra[0][3:])
+    	for i in range(0, len(Cifra[1])):
+    		soma =Alfabeto.index(Cifra[1][i])+ROTA
+    		Num.append(soma)
+    	for i in range(0, len(Cifra[1])):
+    		String.append(Alfabeto[int(Num[i])])
+
+    	print("".join(String))
+    else:
+    	print("Erro")
 
 
     
