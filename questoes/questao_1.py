@@ -43,7 +43,7 @@ def main():
     while h < NumVir:
     	POS = entrada.find(", ")
     	if(NumVir == 1 or h == NumVir-1):
-    		POS = len(entrada)-1 
+    		POS = len(entrada)
     	num =0
     	num1 =0
     	num2 =0
@@ -53,7 +53,7 @@ def main():
     	i = P5
     	while i < POS:	
     		
-    		if POS+1 - P5 > 5 and POS+1 - P5 < 13:
+    		if POS - P5 > 5 and POS - P5 < 13:
     			num1 = 1
 
     		if entrada[i].isdigit():
@@ -71,7 +71,7 @@ def main():
     		P2 = entrada.find(", ")
 
     		if(P2 == -1):
-    			P2 = len(entrada) - 1
+    			P2 = len(entrada)
     		print(entrada[P5:P2])
 
     	
