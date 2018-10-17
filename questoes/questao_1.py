@@ -29,8 +29,7 @@
 ##
 def main():
     print("questao 1")
-    entrada = input().split(", ")
-    Saida = []
+    entrada = input()
     i = 0
     j = 0
     num1 = 0
@@ -39,38 +38,64 @@ def main():
     num4 = 0
     num5 = 0
     num6 = 0
-    while i < len(entrada):
-   		while j < len((entrada[i])):
-   			if len(entrada[i]) > 5 and len(entrada[i]) < 13:
-   				num6 = 1
+    h = 0
+    NumVir = 1
+    while i < (len(entrada)-1):
+    	if entrada[i] == "," and entrada[i+1] == " ":
+    		NumVir += 1
+    	i += 1
 
-   			if entrada[i][j].isdigit():
-   				num1 = 1
-   			elif entrada[i][j].isupper():
-   				num3 = 1
-   			elif entrada[i][j].islower():
-   				num4 = 1
-   			elif entrada[i][j] == '$' or entrada[i][j] == '#' or entrada[i][j] == '@':
-   				num5 = 1
-   			
-   			j += 1
-   		num = num1 + num2+ num3 + num4 + num5 + num6
-   		Saida.append(num)
-   		num =0
-   		num1 =0
-   		num2 =0
-   		num3 =0
-   		num4 =0
-   		num5 =0
-   		num6 =0
-   		j=0
-   		i+=1
+    i = 0
+    P5 =0
+    while h < NumVir:
+    	POS = entrada.find(", ")
+    	if(NumVir == 1 or h == NumVir-1):
+    		POS = len(entrada)-1 
 
+    	while i < POS - P5:	
+    		
+    		if POS+1 - P5 > 5 and POS+1 - P5 < 13:
+    			num1 = 1
+
+    		if entrada[i].isdigit():
+    			num2 = 1
+    		elif entrada[i].isupper():
+    			num3 = 1
+    		elif entrada[i].islower():
+    			num4 = 1
+    		elif entrada[i] == '$' or entrada[i] == '#' or entrada[i] == '@':
+    			num5 = 1
+    		
+    		i += 1
+    	
+    	num = num1 + num2+ num3 + num4 + num5
+    	if(num == 5):
+    		P2 = entrada.find(", ")
+
+    		if(P2 == -1):
+    			P2 = len(entrada) - 1
+    		print(entrada[P5:P2])
+
+    	
+    	
+    	
+    	entrada = entrada.replace(", ","  ",1)
+    	P5 = POS+2
+    	
+
+    		
+    	##entrada.replace(",", " ", 1)
+    	
+    	num =0
+    	num1 =0
+    	num2 =0
+    	num3 =0
+    	num4 =0
+    	num5 =0
+    	i=0
+    	h+=1
     j=0
-    while j < len(Saida):
-   		if Saida[j] == 5:
-   			print(entrada[j])
-   		j+=1
+
 
 
 if __name__ == '__main__':

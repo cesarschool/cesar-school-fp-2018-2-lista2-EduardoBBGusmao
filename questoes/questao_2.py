@@ -20,7 +20,7 @@
 # BAIXO 3
 # ESQUERDA 3
 # DIREITA 2
-#
+# 
 # Então, a saída do programa deve ser:
 # 2
 # 
@@ -46,13 +46,13 @@ def main():
     Mov = input()
     while Mov:
     	
-    	if Mov.find('CIMA') == 0:
+    	if Mov.find('CIMA') == 0 and Mov[Mov.find(" ")+1:].isdigit():
     		CIMA += int(Mov[Mov.find(" ")+1:])
-    	elif Mov.find('BAIXO') == 0:
+    	elif Mov.find('BAIXO') == 0 and Mov[Mov.find(" ")+1:].isdigit():
     		BAIXO += int(Mov[Mov.find(" ")+1:])
-    	elif Mov.find('DIREITA') == 0:
+    	elif Mov.find('DIREITA') == 0 and Mov[Mov.find(" ")+1:].isdigit():
     		DIREITA += int(Mov[Mov.find(" ")+1:])
-    	elif Mov.find('ESQUERDA') == 0:
+    	elif Mov.find('ESQUERDA') == 0 and Mov[Mov.find(" ")+1:].isdigit():
     		ESQUERDA += int(Mov[Mov.find(" ")+1:])
     	
     	Mov = input()
