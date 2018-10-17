@@ -39,33 +39,29 @@
 ##
 import math
 def main():
-	Mov = []
-	CIMA = 0
-	BAIXO = 0
-	ESQUERDA = 0
-	DIREITA = 0
-	n = input().split()
-	while n:
-		Mov.append(n)
-		n = input().split()
-	i=0
-	j=0
-	while i < len(Mov):
-		if Mov[i][0] == 'CIMA':
-			CIMA += int(Mov[i][1])
-		elif Mov[i][0] == 'BAIXO':
-			BAIXO += int(Mov[i][1])
-		elif Mov[i][0] == 'DIREITA':
-			DIREITA += int(Mov[i][1])
-		elif Mov[i][0] == 'ESQUERDA':
-			ESQUERDA += int(Mov[i][1])
-		i +=1
-	
-	X = CIMA - BAIXO
-	Y = ESQUERDA - DIREITA
-	distancia = X*X + Y*Y
-	distancia = math.sqrt(distancia)
-	print(round(distancia))
+    CIMA = 0
+    BAIXO = 0
+    ESQUERDA = 0
+    DIREITA = 0
+    Mov = input()
+    while Mov:
+    	
+    	if Mov.find('CIMA') == 0:
+    		CIMA += int(Mov[Mov.find(" ")+1:])
+    	elif Mov.find('BAIXO') == 0:
+    		BAIXO += int(Mov[Mov.find(" ")+1:])
+    	elif Mov.find('DIREITA') == 0:
+    		DIREITA += int(Mov[Mov.find(" ")+1:])
+    	elif Mov.find('ESQUERDA') == 0:
+    		ESQUERDA += int(Mov[Mov.find(" ")+1:])
+    	
+    	Mov = input()
+
+    X = CIMA - BAIXO
+    Y = ESQUERDA - DIREITA
+    distancia = X*X + Y*Y
+    distancia = math.sqrt(distancia)
+    print(round(distancia))
 
 
 

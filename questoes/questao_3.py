@@ -44,20 +44,35 @@
 # Para a correta execução do programa, a estrutura atual deve ser mantida,
 # substituindo apenas o comando print(questão...) existente.
 ##
+import sys
 def main():
-    Alfabeto = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    Alfabetom, AlfabetoM = 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     Num = []
     String = []
-    Cifra = input().split()
-    if Cifra[0][0:3] == 'ROT' and Cifra[0][3:].isdigit():
-    	ROTA = int(Cifra[0][3:])
-    	for i in range(0, len(Cifra[1])):
-    		soma =Alfabeto.index(Cifra[1][i])+ROTA
-    		Num.append(soma)
-    	for i in range(0, len(Cifra[1])):
-    		String.append(Alfabeto[int(Num[i])])
-
-    	print("".join(String))
+    i = 3
+    Cifra = input()
+    while i < len(Cifra):
+    	if Cifra[i] == " ":
+    		NumTerm = i
+    		break
+    	i+=1
+    if Cifra[0:3] == 'ROT' and Cifra[3:NumTerm].isdigit():
+    	ROTA = int(Cifra[3:NumTerm])
+    	i=NumTerm+1
+    	while i < len(Cifra):
+    		j=0
+    		POS = AlfabetoM.find(Cifra[i])
+    		if Cifra[i] ==" ":
+    			sys.stdout.write(" ")
+    		elif Cifra[i] == ".":
+    			sys.stdout.write('.')
+    		elif POS == -1:
+    			POS = Alfabetom.find(Cifra[i])
+    			sys.stdout.write(Alfabetom[((POS+ROTA) % len(Alfabetom))])
+    		else:
+    			sys.stdout.write(AlfabetoM[((POS+ROTA) % len(AlfabetoM))])
+    		i+=1
+    	i=0
     else:
     	print("Erro")
 
