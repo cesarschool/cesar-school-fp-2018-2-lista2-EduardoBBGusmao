@@ -31,13 +31,6 @@ def main():
     print("questao 1")
     entrada = input()
     i = 0
-    j = 0
-    num1 = 0
-    num2 = 0
-    num3 = 0
-    num4 = 0
-    num5 = 0
-    num6 = 0
     h = 0
     NumVir = 1
     while i < (len(entrada)-1):
@@ -51,21 +44,26 @@ def main():
     	POS = entrada.find(", ")
     	if(NumVir == 1 or h == NumVir-1):
     		POS = len(entrada)-1 
-
-    	while i < POS - P5:	
+    	num =0
+    	num1 =0
+    	num2 =0
+    	num3 =0
+    	num4 =0
+    	num5 =0
+    	i = P5
+    	while i < POS:	
     		
     		if POS+1 - P5 > 5 and POS+1 - P5 < 13:
     			num1 = 1
 
     		if entrada[i].isdigit():
     			num2 = 1
-    		elif entrada[i].isupper():
+    		if entrada[i].isupper():
     			num3 = 1
-    		elif entrada[i].islower():
+    		if entrada[i].islower():
     			num4 = 1
-    		elif entrada[i] == '$' or entrada[i] == '#' or entrada[i] == '@':
+    		if entrada[i] == '$' or entrada[i] == '#' or entrada[i] == '@':
     			num5 = 1
-    		
     		i += 1
     	
     	num = num1 + num2+ num3 + num4 + num5
@@ -86,12 +84,7 @@ def main():
     		
     	##entrada.replace(",", " ", 1)
     	
-    	num =0
-    	num1 =0
-    	num2 =0
-    	num3 =0
-    	num4 =0
-    	num5 =0
+    	
     	i=0
     	h+=1
     j=0
