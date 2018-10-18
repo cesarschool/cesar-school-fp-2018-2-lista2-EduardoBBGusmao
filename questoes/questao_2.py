@@ -43,7 +43,7 @@ def main():
     BAIXO = 0
     ESQUERDA = 0
     DIREITA = 0
-    Mov = input()
+    Mov = input("Digite a direção e os numero de passos que o robo vai andar: ")
     while Mov:
     	
     	if Mov.find('CIMA') == 0 and Mov[Mov.find(" ")+1:].isdigit():
@@ -54,7 +54,7 @@ def main():
     		DIREITA += int(Mov[Mov.find(" ")+1:])
     	elif Mov.find('ESQUERDA') == 0 and Mov[Mov.find(" ")+1:].isdigit():
     		ESQUERDA += int(Mov[Mov.find(" ")+1:])
-    	
+    	("Digite novamente: ")
     	Mov = input()
 
     X = CIMA - BAIXO

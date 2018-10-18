@@ -29,7 +29,7 @@
 ##
 def main():
     print("questao 1")
-    entrada = input()
+    entrada = input("Digite a senha: ")
     i = 0
     h = 0
     NumVir = 1

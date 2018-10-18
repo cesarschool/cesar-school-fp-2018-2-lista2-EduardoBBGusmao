@@ -19,7 +19,7 @@
 # substituindo apenas o comando print(questão...) existente.
 ##
 def main():
-    data = input()
+    data = input("Digite a data desejada:")
 
     # Verifica todos os numeros que acabam com 31 dias
 
@@ -35,7 +35,7 @@ def main():
         else:
             Mes = int(data[5:7]) + 1
             data = data[:4]+ '-0' + str(Mes) + '-' + '01'
-        print(data)
+        print("Data do dia seguinte é: ", data)
 
     # Verifica todos os numeros que acabam com 30 dias
 
@@ -48,7 +48,7 @@ def main():
             Mes = int(data[5:7]) + 1
             data = data[:4]+ '-0' + str(Mes) + '-' + '01'
 
-        print(data)    
+        print("Data do dia seguinte é: ", data)    
 
 
     # Verifica se em está no mes de fevereiro e é bissexto
@@ -63,7 +63,7 @@ def main():
         else:
             Mes = int(data[5:7]) + 1
             data = data[:4]+ '-0' + str(Mes) + '-' + '01'
-        print(data)
+        print("Data do dia seguinte é: ", data)
 
     else:
         print("Data inválida")

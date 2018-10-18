@@ -50,7 +50,7 @@ def main():
     Num = []
     String = []
     i = 3
-    Cifra = input()
+    Cifra = input("Digite o valor de rotação e o e a mensagem")
     while i < len(Cifra):
     	if Cifra[i] == " ":
     		NumTerm = i
